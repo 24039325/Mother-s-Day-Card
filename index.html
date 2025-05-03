@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mother's Day Gift</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.min.js"></script>
+  <style>
+    
+    body {
+      background: #f9f3e9;
+      text-align: center;
+      font-family: cursive; /* Built-in browser cursive font */
+    }
+    .envelope {
+      width: 200px;
+      cursor: pointer;
+      margin: 50px auto;
+    }
+    .letter {
+      display: none;
+      background: white;
+      padding: 20px;
+      max-width: 500px;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .photos img {
+      width: 200px;
+      margin: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Envelope Image -->
+  <img src="images/Envelope.png" class="envelope" onclick="openEnvelope()">
+
+  <!-- The Letter - EDIT THIS SECTION WITH YOUR OWN WORDS -->
+  <div class="letter" id="letter">
+    <div id="message"></div>
+    <h1>Happy Mother's Day Mom!</h1>
+
+    <p>Today I just want to take a moment to appreciate and thank you for everything you do.Your love, strength, and kindness mean the world to me. You've always been my greatest supporter, my source of comfort, and my guide through life's ups and downs. I am so grateful to have you as my mother. Wishing you a day filled with love, joy, and all the happiness you bring to everyone around you. You deserve nothing less!"</p>
+    
+    <!-- Photo Gallery -->
+    <div class="photos">
+      <img src="images/Picture1.jpg">
+      <img src="images/Picture2.jpg" >
+    </div>
+    
+    <p>With all my love,</p>
+    <p>- Vele</p>
+  </div>
+
+<script src="script.js"></script>
+  <script>
+    function openEnvelope() {
+      document.querySelector('.envelope').style.display = 'none';
+      document.getElementById('letter').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

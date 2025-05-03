@@ -45,18 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 2. Confetti Explosion
     function launchConfetti() {
-      const confettiSettings = {
-        particleCount: 150,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#ff6b6b', '#48dbfb', '#1dd1a1', '#feca57', '#ff9ff3']
-      };
+      confetti({
+        particleCount: 100, spread: 70, origin: {y: 0.6}
+      });
+
+      }
       
-      // Multiple bursts
-      confetti(confettiSettings);
-      setTimeout(() => confetti(confettiSettings), 300);
-      setTimeout(() => confetti(confettiSettings), 600);
-    }
     
     // 3. Photo Gallery Hover Effect
     const photos = document.querySelectorAll('.photos img');

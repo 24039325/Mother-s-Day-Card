@@ -2,22 +2,54 @@
 body {
     background: #f9f3e9; /* Warm parchment-like background */
     text-align: center;
-    font-family: 'Courier New', cursive; /* Fallback handwritten font */
+    font-family: 'Arial', 'Helvetica', sans-serif;
     padding: 20px;
   }
   
   /* Envelope styling */
   .envelope {
-    width: 200px; /* Adjust size as needed */
+    width: 320px; /* Adjust size as needed */
     cursor: pointer; /* Shows it's clickable */
     transition: transform 0.3s; /* Smooth hover effect */
-    margin: 50px auto 30px; /* Centers horizontally */
+    margin: 0 auto ; /* Centers horizontally */
+    height: auto;
   }
   
   .envelope:hover {
     transform: scale(1.05); /* Slight grow on hover */
   }
-  
+  /* Click Me Animation Styles */
+.click-hint {
+  position: relative;
+  margin-top: 20px;
+}
+
+.hand-pointer {
+  font-size: 30px;
+  animation: bounce 2s infinite;
+  transform-origin: bottom left;
+}
+
+.pulse-text {
+  font-family: 'Comic Sans MS', cursive;
+  color: #ff6b6b;
+  font-weight: bold;
+  font-size: 18px;
+  animation: pulse 1.5s infinite;
+  margin-top: 5px;
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 100% { transform: rotate(-10deg) scale(1); }
+  50% { transform: rotate(10deg) scale(1.2); }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 0.7; transform: scale(1); }
+}
   /* Letter styling (hidden by default) */
   .letter {
     display: none; /* Will show via JavaScript */
@@ -82,4 +114,12 @@ body {
   @keyframes fadeOut {
     from { opacity: 1; transform: translateY(0); }
     to { opacity: 0; transform: translateY(20px); }
+  }
+  @media (max-width: 600px) {
+    .hand-pointer {
+      font-size: 40px; /* Bigger on small screens */
+    }
+    .pulse-text {
+      font-size: 22px;
+    }
   }

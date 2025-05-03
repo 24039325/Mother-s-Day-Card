@@ -3,11 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===== ENVELOPE INTERACTION =====
     const envelope = document.querySelector('.envelope');
     const letter = document.getElementById('letter');
+    const clickHint = document.querySelector('.click-hint');
     
     envelope.addEventListener('click', function() {
       // 1. Animate envelope opening
       envelope.style.transform = 'scale(0.8) rotateY(180deg)';
       envelope.style.opacity = '0';
+      clickHint.style.display = 'none';
       
       // 2. Show letter after delay
       setTimeout(() => {
@@ -17,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // 3. Typewriter effect for message
         typeWriter(
           document.getElementById('message'),
-          "Dear Mom,\n\nYou're the most amazing mother in the world"
+          "Dear Mom,\n\nYou're the most amazing mother in the world!"
         );
         
         // 4. Launch confetti
@@ -83,4 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
         envelope.style.transform = 'scale(1) rotateY(0)';
       }, 500);
     });
+    if (window.innerWidth <= 600) {
+      clickHint.style.display = 'block'; // Only show on mobile
+    }
   });
